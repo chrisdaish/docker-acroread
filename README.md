@@ -7,7 +7,7 @@ Changelog
 ---------
 ```
 v1.1
-* New Feature: User permissions now correlate between host and container. This allows PDF files to be saved back to the host system by passing the in the local users uid/gid as environment variables.
+* New Feature: User permissions now correlate between host and container. This allows PDF files to be saved back to the host system by passing in the local users uid/gid as environment variables.
 
 v1.0
 * Initial Release
