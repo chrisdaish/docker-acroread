@@ -4,8 +4,8 @@ MAINTAINER Chris Daish <chrisdaish@gmail.com>
 
 ENV DEBIAN_FRONTEND noninteractive
 ENV acroreadPackage AdbeRdr9.5.5-1_i386linux_enu.deb
-ENV uid=1000
-ENV gid=1000
+ENV uid 1000
+ENV gid 1000
 
 RUN useradd -m acroread; \
     dpkg --add-architecture i386; \
