@@ -22,12 +22,26 @@ v1.0
 Launch Command
 ---------------
 ```
-docker run -v $HOME/PathToDirectoryContainingPDFs:/home/acroread/Documents:rw -v /tmp/.X11-unix:/tmp/.X11-unix -e uid=$(id -u) -e gid=$(id -g) -e DISPLAY=unix$DISPLAY --name acroread chrisdaish/acroread
+docker run  -v $HOME/PathToDirectoryContainingPDFs:/home/acroread/Documents:rw \
+            -v /tmp/.X11-unix:/tmp/.X11-unix \
+            -e uid=$(id -u) \
+            -e gid=$(id -g) \
+            -e DISPLAY=unix$DISPLAY \
+            --name acroread \
+            chrisdaish/acroread
 ```
 Additional config example:
 
 ```
-docker run -v $HOME/PathToDirectoryContainingPDFs:/home/acroread/Documents:rw -v $HOME/<pathToConfigFiles>/reader_prefs:/home/acroread/.adobe/Acrobat/9.0/Preferences/reader_prefs:ro -v /tmp/.X11-unix:/tmp/.X11-unix -e uid=$(id -u) -e gid=$(id -g) -e DISPLAY=unix$DISPLAY -e FILE='/home/acroread/Documents/dockercon14_agenda-digital.pdf' --name acroread chrisdaish/acroread
+docker run  -v $HOME/PathToDirectoryContainingPDFs:/home/acroread/Documents:rw \
+            -v $HOME/<pathToConfigFiles>/reader_prefs:/home/acroread/.adobe/Acrobat/9.0/Preferences/reader_prefs:ro \
+            -v /tmp/.X11-unix:/tmp/.X11-unix \
+            -e uid=$(id -u) \
+            -e gid=$(id -g) \
+            -e DISPLAY=unix$DISPLAY \
+            -e FILE='/home/acroread/Documents/dockercon14_agenda-digital.pdf' \
+            --name acroread \
+            chrisdaish/acroread
 ```
 
 FAQ
