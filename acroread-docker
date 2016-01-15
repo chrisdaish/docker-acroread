@@ -1,0 +1,22 @@
+#!/bin/bash
+
+CONTAINER="chrisdaish/acroread"
+CONTAINER="local/acroread"
+
+TZ=$(cat /etc/timezone)
+
+XSOCK=/tmp/.X11-unix
+XAUTH=/tmp/.docker.xauth
+
+VOLUMES=" --volume=$HOME:/home/acroread:rw"
+VOLUMES+=" --volume=${XSOCK}:${XSOCK}"
+VOLUMES+=" --volume=${XAUTH}:${XAUTH}"
+VOLUMES+=" --volume=/var/run/cups/cups.sock:/var/run/cups/cups.sock"
+
+ENV_VARS=" -e uid=$(id -u)"
+ENV_VARS+=" -e gid=$(id -g)"
+ENV_VARS+=" -e DISPLAY=unix$DISPLAY"
+ENV_VARS+=" --env=XAUTHORITY=${XAUTH}"
+ENV_VARS+=" --env=TZ=${TZ}"
+
+docker run --rm -it $VOLUMES $ENV_VARS --name acroread ${CONTAINER}
