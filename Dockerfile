@@ -1,4 +1,4 @@
-FROM ubuntu:14.04
+FROM ubuntu:14.04.03
 
 MAINTAINER Chris Daish <chrisdaish@gmail.com>
 
@@ -11,6 +11,8 @@ RUN useradd -m acroread; \
     dpkg --add-architecture i386; \
     apt-get update; \
     apt-get install -y  wget \
+                        cups-bsd \
+                        libcups2 \
                         libgtk2.0-0:i386 \
                         libnss3-1d:i386 \
                         libnspr4-0d:i386 \
