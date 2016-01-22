@@ -1,4 +1,4 @@
-FROM ubuntu:14.04.03
+FROM ubuntu:14.04.3
 
 MAINTAINER Chris Daish <chrisdaish@gmail.com>
 

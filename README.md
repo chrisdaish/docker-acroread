@@ -9,7 +9,7 @@ rendered by the local X Server.
 v1.3
 * Added cups printing support. Volume mount /etc/cups/client.conf:ro + /var/run/cups:ro
   NB: You might need to modify your cupsd.conf to allow printing from the Docker bridge IP.
-* Upgraded base image from Ubuntu 14.04 to Ubuntu 14.04.03
+* Upgraded base image from Ubuntu 14.04 to Ubuntu 14.04.3
 
 v1.2
 * Optional environment variables 'ARGS' and 'FILE' can now be passed into the
