@@ -20,7 +20,10 @@ RUN useradd -m acroread; \
                         libxml2:i386 \
                         libxslt1.1:i386 \
                         libstdc++6:i386; \
+    apt-get install -y --no-install-recommends cups-client; \
     rm -rf /var/lib/apt/lists/*
+
+RUN mkdir /etc/cups && echo "ServerName /var/run/cups/cups.sock" >/etc/cups/client.conf
 
 RUN wget -q http://ardownload.adobe.com/pub/adobe/reader/unix/9.x/9.5.5/enu/$acroreadPackage -O /tmp/$acroreadPackage; \
     dpkg -i  /tmp/$acroreadPackage; \
